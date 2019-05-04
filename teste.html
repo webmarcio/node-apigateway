@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    olá mundo
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'http://localhost:3000/api/users',
+            method: 'GET',
+            dataType: 'json',
+            headers: {
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTU2OTk3Nzg5LCJleHAiOjE1NTcwODQxODl9.tHgznzR4uwCRy_v9Ixu1y_HjBoDrp461B6bRLwbY6ns'
+            },
+            success: (data) => {
+                console.log(data);
+            },
+            error: (err) => {
+                console.log(err.statusText);
+            }
+        });
+    </script>
+</body>
+</html>
